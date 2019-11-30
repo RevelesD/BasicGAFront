@@ -1,0 +1,69 @@
+<div class="home-container">
+  <form [formGroup]="dataGroup" id="form-container"
+        fxLayout="column" fxLayoutAlign="space-evenly stretch">
+    <!--  functions -->
+    <div fxLayout="row" class="inputs-block"
+         fxLayoutAlign="space-between center">
+
+      <mat-form-field fxFlex appearance="outline">
+        <mat-label>Selección de función</mat-label>
+        <mat-select formControlName="func">
+          <mat-option *ngFor="let f of funciones" [value]="f.option">
+            {{ f.func }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <!--  generaciones -->
+    <div fxLayout="row" fxLayoutAlign="space-between center"
+         fxLayoutGap="1em" class="inputs-block">
+
+      <mat-form-field fxFlex="33" appearance="outline">
+        <mat-label>Número de generaciones</mat-label>
+        <input matInput formControlName="generations">
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33" appearance="outline">
+        <mat-label>Elementos por genenración</mat-label>
+        <input matInput formControlName="population">
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33" appearance="outline">
+        <mat-label>Elementos para elitísmo</mat-label>
+        <input matInput formControlName="elitism">
+      </mat-form-field>
+    </div>
+
+    <!--  Umbrales -->
+    <div fxLayout="row" fxLayoutAlign="space-between center"
+         fxLayoutGap="1em" class="inputs-block">
+      <mat-form-field fxFlex="33" appearance="outline">
+        <mat-label>Umbral i</mat-label>
+        <input matInput formControlName="umbrali">
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33" appearance="outline">
+        <mat-label>Umbral cruzamiento</mat-label>
+        <input matInput formControlName="crossover">
+      </mat-form-field>
+
+      <mat-form-field fxFlex="33" appearance="outline">
+        <mat-label>Umbral mutación</mat-label>
+        <input matInput formControlName="mutation">
+      </mat-form-field>
+    </div>
+
+    <!--  botones-->
+    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+      <button type="button" mat-raised-button color="warn" (click)="resetFields()">
+        Reset fields
+      </button>
+      <button type="submit" mat-raised-button color="primary" (click)="calcAlgorithm()">
+        Calcular
+      </button>
+    </div>
+
+  </form>
+</div>
