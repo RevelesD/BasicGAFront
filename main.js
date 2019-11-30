@@ -2,6 +2,8 @@ const {app, BrowserWindow} = require('electron')
 const url = require("url");
 const path = require("path");
 
+process.env.NODE_ENV = 'production';
+
 let mainWindow
 
 function createWindow () {
@@ -21,7 +23,7 @@ function createWindow () {
     })
   );
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.on('closed', function () {
     mainWindow = null
