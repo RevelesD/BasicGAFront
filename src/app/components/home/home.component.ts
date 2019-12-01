@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
       mutation:  Number(this.mutation)
     }
     console.log('Struct before', ans);
-    this.http.post('http://localhost:8080/startga', ans).pipe(take(1)).subscribe(
+    this.http.post('https://basicga.appspot.com/startga', ans).pipe(take(1)).subscribe(
       res => {
         this.dialog.open(ResultsComponent, {
           data: {

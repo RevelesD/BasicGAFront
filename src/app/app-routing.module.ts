@@ -12,7 +12,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'results/:data', component: ResultsComponent }
+      { path: 'results/:data', component: ResultsComponent },
+      { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }
