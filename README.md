@@ -1,3 +1,6 @@
+# Site running live
+https://revelesd.github.io/BasicGAFront/home
+
 # BasicGAFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
